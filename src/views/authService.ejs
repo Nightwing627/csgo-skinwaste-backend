@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Redirecting...</title>
+  <style>
+    body {
+      margin: 0;
+      background: #212121;
+      display: flex;
+      width: 100vw;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: sans-serif;
+      font-size: 24px;
+      width: 100%;
+      padding: 20px;
+      color: #efefef;
+    }
+  </style>
+</head>
+
+<body>
+  <span id="data" hidden>
+    <%= JSON.stringify(data) %>
+  </span>
+  <h1>
+    <%= !data.success ? data.response.message : 'Redirecting...' %>
+  </h1>
+  <script>
+    var redirectUrl = '<%= redirectUrl %>'
+    var data = JSON.parse(document.getElementById('data').innerHTML)
+
+    if (data.success) {
+      // if popup
+      if (window.opener) {
+        window.opener.postMessage({ source: 'oauth', success: true, response: data.response }, '*')
+        window.close()
+      }
+
+      // no popup, redirect with csrf token
+      document.location.href = redirectUrl + '/?token=' + data.response.token
+    } else {
+      if (window.opener) {
+        window.opener.postMessage({ source: 'oauth', success: false, error: data.response.message }, '*')
+
+        setTimeout(window.close, 5000)
+      } else {
+        setTimeout(() => {
+          document.location.href = redirectUrl + '/?error=loginFailure'
+        }, 5e3)
+      }
+    }
+  </script>
+</body>
+
+</html>

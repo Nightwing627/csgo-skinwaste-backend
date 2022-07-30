@@ -1,0 +1,31 @@
+branch-defaults:
+  hotfixes:
+    environment: skinwaste-staging-api
+    group_suffix: null
+  dev:
+    environment: skinwaste-staging-api
+    group_suffix: null
+  master:
+    environment: skinwaste-prod-api
+    group_suffix: null
+environment-defaults:
+  crashit-gg-api-dev:
+    branch: null
+    repository: null
+global:
+  application_name: skinwaste
+  branch: null
+  default_ec2_keyname: aws
+  default_platform: Node.js
+  default_region: eu-west-1
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: eb-cli
+  repository: null
+  sc: git
+  workspace_type: Application
+option_settings:
+  aws:elasticbeanstalk:container:nodejs:
+    NodeCommand: npm run start

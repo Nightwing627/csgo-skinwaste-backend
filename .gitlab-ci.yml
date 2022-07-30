@@ -1,0 +1,45 @@
+image: node:latest
+
+stages:
+  - build
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+
+install_dependencies:
+  stage: build
+  script:
+    - npm install
+  artifacts:
+    paths:
+      - node_modules/
+
+deploy_aws_staging:
+  only:
+    refs:
+      - dev
+  image: python:latest
+  stage: deploy
+  before_script:
+    - pip install awsebcli --upgrade --user
+    - chmod +x ./.eb-config.sh
+    - ./.eb-config.sh
+    - git checkout dev
+  script:
+    - /root/.local/bin/eb deploy skinwaste-staging-api
+
+deploy_aws:
+  only:
+    refs:
+      - master
+  image: python:latest
+  stage: deploy
+  before_script:
+    - pip install awsebcli --upgrade --user
+    - chmod +x ./.eb-config.sh
+    - ./.eb-config.sh
+    - git checkout master
+  script:
+    - /root/.local/bin/eb deploy skinwaste-prod-api

@@ -1,0 +1,307 @@
+[
+  {
+    "_id": {
+      "$oid": "60a390519d5407625906ee34"
+    },
+    "feature": "crypto",
+    "settings": {
+      "minWithdrawalAmount": 100,
+      "withdrawPercent": 0.03,
+      "enabled": {
+        "withdrawals": true,
+        "deposits": true
+      },
+      "rates": {
+        "ETH": {
+          "deposit": 163584,
+          "withdrawal": 184467,
+          "normal": 174026
+        },
+        "BTC": {
+          "deposit": 4346488,
+          "withdrawal": 4901359,
+          "normal": 4623924
+        }
+      },
+      "allowedCoins": [
+        "ETH",
+        "BTC",
+        "LTC",
+        "USDC",
+        "USDT"
+      ],
+      "minDepositValues": {
+        "BTC": 0.0001,
+        "ETH": 0.001
+      }
+    },
+    "createdAt": {
+      "$date": "2019-10-04T17:21:56.753Z"
+    },
+    "updatedAt": {
+      "$date": "2021-02-09T14:18:16.138Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "60a390639d5407625906ee35"
+    },
+    "feature": "silver",
+    "settings": {
+      "enabled": true,
+      "maxPlayers": 10,
+      "maxItemsPerPlayer": 20,
+      "antiSnipe": false,
+      "antiSnipeTime": 5,
+      "roundTimeLimit": 10,
+      "animationTime": 8,
+      "minBet": 10,
+      "lastBetTime": 0.5,
+      "maxItems": 100,
+      "rake": 0.1,
+      "maxBet": 3000
+    },
+    "createdAt": {
+      "$date": "2019-10-04T17:21:56.753Z"
+    },
+    "updatedAt": {
+      "$date": "2019-10-04T17:21:56.753Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "60a3906a9d5407625906ee36"
+    },
+    "feature": "coinflip",
+    "settings": {
+      "enabled": true,
+      "maxItemsPerPlayer": 20,
+      "minBet": 10,
+      "rake": 0.1,
+      "maxOpenGamesPerPlayer": 5,
+      "roundTimeLimit": 10
+    },
+    "createdAt": {
+      "$date": "2019-10-04T17:21:56.753Z"
+    },
+    "updatedAt": {
+      "$date": "2019-10-04T17:21:56.753Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "60a390739d5407625906ee37"
+    },
+    "feature": "jackpot",
+    "settings": {
+      "enabled": true,
+      "maxPlayers": 10,
+      "maxItemsPerPlayer": 20,
+      "antiSnipe": false,
+      "antiSnipeTime": 5,
+      "roundTimeLimit": 25,
+      "animationTime": 8,
+      "maxItems": 100,
+      "minBet": 100,
+      "lastBetTime": 0.5,
+      "rake": 0.1
+    },
+    "createdAt": {
+      "$date": "2019-10-04T17:21:56.753Z"
+    },
+    "updatedAt": {
+      "$date": "2019-10-04T17:21:56.753Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "60a3907b9d5407625906ee38"
+    },
+    "feature": "rain",
+    "settings": {
+      "maxAmount": 100000,
+      "maxFreq": 10,
+      "minFreq": 5,
+      "timeLimit": 25,
+      "lastBetTime": 2,
+      "prizePools": {
+        "40": {
+          "amountPer": 25,
+          "howMany": 20
+        },
+        "80": {
+          "amountPer": 100,
+          "howMany": 20
+        },
+        "160": {
+          "amountPer": 250,
+          "howMany": 20
+        }
+      }
+    },
+    "createdAt": {
+      "$date": "2019-10-04T17:21:56.753Z"
+    },
+    "updatedAt": {
+      "$date": "2019-10-04T17:21:56.753Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "60a390859d5407625906ee39"
+    },
+    "feature": "affiliate",
+    "settings": {
+      "minWithdrawal": 100,
+      "referralDepositBonus": 0.05,
+      "tiers": {
+        "1": {
+          "users": 0,
+          "wagered": 0,
+          "bonus": 0.0025
+        },
+        "2": {
+          "user": 10,
+          "wagered": 100000,
+          "bonus": 0.004
+        },
+        "3": {
+          "user": 25,
+          "wagered": 300000,
+          "bonus": 0.005
+        },
+        "4": {
+          "user": 50,
+          "wagered": 750000,
+          "bonus": 0.006
+        },
+        "5": {
+          "user": 100,
+          "wagered": 2000000,
+          "bonus": 0.0075
+        },
+        "6": {
+          "user": 250,
+          "wagered": 5000000,
+          "bonus": 0.009
+        },
+        "7": {
+          "user": 500,
+          "wagered": 10000000,
+          "bonus": 0.01
+        },
+        "8": {
+          "user": 1000,
+          "wagered": 15000000,
+          "bonus": 0.0115
+        },
+        "9": {
+          "user": 2500,
+          "wagered": 50000000,
+          "bonus": 0.013
+        },
+        "10": {
+          "user": 5000,
+          "wagered": 100000000,
+          "bonus": 0.015
+        }
+      },
+      "elite": {
+        "percent_rake": 0.4
+      },
+      "daysBeforeAffiliateChange": 3
+    },
+    "createdAt": {
+      "$date": "2019-10-04T17:21:56.753Z"
+    },
+    "updatedAt": {
+      "$date": "2020-01-07T23:03:31.284Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "60a3908e9d5407625906ee3a"
+    },
+    "feature": "site",
+    "settings": {
+      "enabled": {
+        "elite": true,
+        "silver": true,
+        "coinflip": true,
+        "roulette": true,
+        "withdraw": true,
+        "deposit": true,
+        "csgo": true,
+        "chat": true,
+        "jackpot": true,
+        "ethereum": true
+      },
+      "whitelist": {
+        "enabled": false
+      },
+      "maint": {
+        "enabled": false,
+        "message": "Top kek stop that"
+      },
+      "chat": {
+        "timeout": {
+          "enabled": false,
+          "timeout_per_message": 0
+        },
+        "mode": {
+          "current": "open",
+          "minDepo": 500
+        }
+      },
+      "internal": {
+        "depositWageredPercent": 0.3,
+        "botAccountId": "5e0660cdd7f4c8a60300683d",
+        "csgoMarkup": 1.15,
+        "withdrawalApprovalAmount": 10000
+      }
+    },
+    "createdAt": {
+      "$date": "2019-10-05T15:29:26.198Z"
+    },
+    "updatedAt": {
+      "$date": "2019-10-05T15:29:26.198Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "613ceebe9f98ff5949f6936c"
+    },
+    "feature": "promo",
+    "settings": {},
+    "createdAt": {
+      "$date": {
+        "$numberLong": "1630947541207"
+      }
+    },
+    "updatedAt": {
+      "$date": {
+        "$numberLong": "1630947541207"
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "60a390639d5407625906ee39"
+    },
+    "feature": "roulette",
+    "settings": {
+      "maxBet": 3000,
+      "minBet": 10,
+      "roundTimeLimit": 10,
+      "animationTime": 8,
+      "lastBetTime": 0.5,
+      "maxBetsPerPlayer": 3
+    },
+    "createdAt": {
+      "$date": "2019-10-04T17:21:56.753Z"
+    },
+    "updatedAt": {
+      "$date": "2019-10-04T17:21:56.753Z"
+    }
+  }
+]

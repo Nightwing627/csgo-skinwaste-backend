@@ -1,0 +1,7 @@
+/node_modules
+.idea
+/log
+/dist
+/**/*.http
+.env
+scripts.md
